@@ -15,7 +15,7 @@ on: push
 jobs:
   Example-Actions-Job:
     name: Exploring GitHub Actions
-    runs-on: self-hosted
+    runs-on: ubuntu-latest #self-hosted
     steps:
       - run: echo "Name - ${{ github.event.inputs.name }}"
       - run: echo "Deploy code - ${{ github.event.inputs.deploy }}"
