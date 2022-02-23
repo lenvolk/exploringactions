@@ -1,5 +1,5 @@
 #  Local .terraform directories
-**/04/*
+**/implementing-cicd-github-actions/04/*
 
 # .tfstate files
 *.tfstate
