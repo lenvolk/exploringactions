@@ -47,10 +47,13 @@ jobs:
       - name: Step that only runs on success of all steps
         if: success()
         run:  echo "This step only runs when no previous steps have failed." 
-        
+
       - name: Step in workflow
         run: echo "Another step in the workflow" 
-          
+        
+      - name: Display dotnet version
+        run: dotnet --version   
+               
       - name: Step that always runs
         if: always()
         run:  echo "This step runs regardless of success or failure." 
