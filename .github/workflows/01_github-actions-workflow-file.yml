@@ -69,6 +69,10 @@ jobs:
           ls ${{ runner.tool_cache }}
       
       - run: echo "This job's status is ${{ job.status }}."
+        
+      - name: Run test script 
+        run: ./.github/scripts/test.sh
+        shell: bash 
 
   Second-Job:
     name: The second job running on another runner
