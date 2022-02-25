@@ -44,6 +44,10 @@ jobs:
         if: failure()
         run: echo "There has been a failure.  Perhaps send a notification." 
 
+      - name: Display dotnet version if failure with IF logic
+        if: failure()
+        run: dotnet --version 
+
       - name: Display dotnet version if failure
         run: dotnet --version 
 
@@ -60,7 +64,7 @@ jobs:
       - name: Step that always runs
         if: always()
         run:  echo "This step runs regardless of success or failure." 
-        
+
       - name: Display dotnet version Always
         run: dotnet --version 
 
