@@ -44,6 +44,9 @@ jobs:
         if: failure()
         run: echo "There has been a failure.  Perhaps send a notification." 
 
+      - name: Display dotnet version if failure
+        run: dotnet --version 
+
       - name: Step that only runs on success of all steps
         if: success()
         run:  echo "This step only runs when no previous steps have failed." 
@@ -51,12 +54,15 @@ jobs:
       - name: Step in workflow
         run: echo "Another step in the workflow" 
         
-      - name: Display dotnet version
+      - name: Display dotnet version if success
         run: dotnet --version   
-               
+
       - name: Step that always runs
         if: always()
         run:  echo "This step runs regardless of success or failure." 
+        
+      - name: Display dotnet version Always
+        run: dotnet --version 
 
   second-job:
   
