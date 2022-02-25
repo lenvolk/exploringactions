@@ -1,8 +1,11 @@
 name: GitHub Actions Demo
 
 on: 
-   push:
-      branches: [ dev ]
+  repository_dispatch:
+    types: [run_my_workflo]
+#    push:
+#       branches: [ dev ]
+      
   # workflow_dispatch:
   #   inputs:
   #     name:
@@ -19,6 +22,8 @@ jobs:
     name: Exploring GitHub Actions
     runs-on: ubuntu-latest #self-hosted
     steps:
+      - run: echo "Payload field is ${{ github.event.client_payload.mydata }}"
+      
       - run: echo "Name - ${{ github.event.inputs.name }}"
       - run: echo "Deploy code - ${{ github.event.inputs.deploy }}"
       
